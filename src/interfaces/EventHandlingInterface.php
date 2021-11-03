@@ -35,4 +35,11 @@
          * @param array|\Closure|null $callback - Event handler.
          */
         public function off( string $event, $callback = null );
+
+        /**
+         * Returns true if the specified Event name has at least a single handler.
+         * @param string $event
+         * @return bool
+         */
+        public function hasHandlers( string $event );
     }
