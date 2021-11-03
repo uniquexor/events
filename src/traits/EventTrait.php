@@ -33,6 +33,16 @@
         }
 
         /**
+         * Returns true if the specified Event name has at least a single handler.
+         * @param string $event
+         * @return bool
+         */
+        public function hasHandlers( string $event ) {
+
+            return !empty( $this->events[ $event ] );
+        }
+
+        /**
          * Triggers the specified event.
          * The first assigned handler will be called first. If it does not set {@see EventObjectInterface::setHandled()} the second handler will be called
          * and so on, until all the handlers have been called or `setHandled( true )` has been set.
